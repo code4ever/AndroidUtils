@@ -8,7 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
 public class BitmapCache {
-	static private BitmapCache mCache;
+	static private BitmapCache sCache;
 
 	private Hashtable<String, Entry> mBitmapEnties;
 	private ReferenceQueue<Bitmap> mGCedBitmapQueue;
@@ -29,10 +29,10 @@ public class BitmapCache {
 	}
 
 	public static BitmapCache getInstance() {
-		if (mCache == null) {
-			mCache = new BitmapCache();
+		if (sCache == null) {
+			sCache = new BitmapCache();
 		}
-		return mCache;
+		return sCache;
 
 	}
 
